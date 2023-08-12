@@ -1,5 +1,13 @@
 from django import forms
-from .models import Client
+from django.contrib.auth.forms import UserCreationForm
+from .models import Client, Company
 
-class EventRegistrationForm(forms.Form):
-    client = forms.ModelChoiceField(queryset=Client.objects.all(), widget=forms.HiddenInput())
+class ClientRegistrationForm(UserCreationForm):
+    class Meta:
+        model = Client
+        fields = ('email', 'password1', 'password2', 'mobile', 'dob', 'country')
+
+class CompanyRegistrationForm(UserCreationForm):
+    class Meta:
+        model = Company
+        fields = ('email', 'password1', 'password2', 'name', 'phone', 'location', 'category')

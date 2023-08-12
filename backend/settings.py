@@ -25,12 +25,12 @@ SECRET_KEY = 'django-insecure-eby&(@cc7p$&+$38uzed3i=+)ijngi8t85i)a9w6^)o7lap$r!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 AUTH_USER_MODEL = "core.CustomUser"
 
-AUTHENTICATION_BACKENDS = ['core.backends.EmailBackend']
 
+LOGIN_URL = 'login'
 # Application definition
 
 INSTALLED_APPS = [

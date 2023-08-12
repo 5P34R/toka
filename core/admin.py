@@ -1,6 +1,9 @@
 from django.contrib import admin
-from .models import Client, Company, CustomUser, Booking, Event
+from .models import Client, Company, CustomUser, Booking, Event, CompanyCategory
 
+@admin.register(CompanyCategory)
+class CompanyCategoryAdmin(admin.ModelAdmin):
+    pass
 @admin.register(CustomUser)
 class CustomUserAdmin(admin.ModelAdmin):
     # Customize the custom user admin if needed
