@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Hello world</h1>
+<div class="flex flex-col"> 
+
+    {% for company in companies %}
+    
+        <a href="{% url 'events' company.id %}" class="underline p-2">
+    
+            <button class="bg-gray-900 text-white p-2 rounded-md">{{ company.name }}</button>
+        </a>
+    
+        {% endfor %}
+</div>
+{% endblock %}
